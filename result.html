@@ -188,40 +188,11 @@
       
      
       <script>
-        // ... Your previous code ...
-        window.jsPDF = window.jspdf.jsPDF;
         document.getElementById("download-pdf-btn").addEventListener("click", function () {
-            // Ensure html2canvas is loaded before using it
-            if (typeof html2canvas !== 'undefined') {
-                const pdf = new jsPDF({
-                    orientation: "portrait",
-                    unit: "mm",
-                    format: "a4"
-                });
-    
-                // Capture the result and result-grid elements
-                const resultElement = document.getElementById("result");
-                const resultGridElement = document.querySelector(".result-grid");
-    
-                // Capture the content of the elements using html2canvas
-                html2canvas(resultElement, { scale: 0.7 }).then(resultCanvas => {
-                    html2canvas(resultGridElement, { scale: 0.5 }).then(resultGridCanvas => {
-                        // Add the result content to the PDF
-                        pdf.addImage(resultCanvas, "JPEG", 10, 10, 0, 0);
-    
-                        // Add the result-grid content to the PDF
-                        pdf.addPage();
-                        pdf.addImage(resultGridCanvas, "JPEG", 10, 10, 0, 0);
-    
-                        // Save the PDF
-                        pdf.save("office-estimate.pdf");
-                    });
-                });
-            } else {
-                console.error("html2canvas is not loaded.");
-            }
+            window.print();
         });
     </script>
+    
     
 </body>
 </html>
