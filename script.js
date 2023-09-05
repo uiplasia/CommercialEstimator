@@ -7,9 +7,9 @@ const basePrices = {
   };
   
   const propertyFactors = {
-    Office: 1.2,
-    CorporateHouse: 1,
-    FactoryOffice: 1.6,
+    Office: 1,
+    CorporateHouse: 1.3,
+    FactoryOffice: 0.8,
   };
   
   const stylingFactors = {
@@ -65,7 +65,7 @@ const basePrices = {
     const stylingFactor = stylingFactors[styling];
     const ceilingHeightFactor = ceilingHeightFactors[ceilingHeight];
     const planFactor = planFactors[plan];
-    const combinedFactor = stylingFactor * ceilingHeightFactor * planFactor;
+    const combinedFactor = stylingFactor * ceilingHeightFactor * planFactor* propertyFactor;
   
     let estimatedPrice = basePrice * combinedFactor;
   
