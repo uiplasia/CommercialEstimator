@@ -59,7 +59,9 @@ const basePrices = {
     const carpetArea =  parseFloat(document.getElementById('carpet-area').value);
     const addOns = document.querySelectorAll('input[name="add-on"]:checked');
     const addOnValues = Array.from(addOns).map((addOn) => addOn.value);
-  
+    const clientName = document.getElementById('ClientName').value;
+    const projectID = document.getElementById('ProjectID').value;
+    console.log('Name:',projectID);
     const basePrice = basePrices[projectType][city] * carpetArea;
     const propertyFactor = propertyFactors[propertyType];
     const stylingFactor = stylingFactors[styling];
@@ -122,7 +124,8 @@ const basePrices = {
     const ceilingHeight = document.querySelector(".button-option-ceiling.button-selected").dataset.value;
     const plan = document.querySelector(".button-option-plan.button-selected").dataset.value;
     const carpetArea = parseFloat(document.getElementById("carpet-area").value);
-  
+    const clientName = document.getElementById('ClientName').value;
+    const projectID = document.getElementById('ProjectID').value;
     const selectedAddOns = [];
     const addOnCheckboxes = document.querySelectorAll('input[name="add-on"]:checked');
     addOnCheckboxes.forEach((checkbox) => {
@@ -138,6 +141,8 @@ const basePrices = {
         plan,
         carpetArea,
         selectedAddOns,
+        clientName,
+        projectID,
     };
   }
   
@@ -167,13 +172,14 @@ const basePrices = {
     const estimatedPrice = calculateEstimate(selections);
     updateResultOutput(estimatedPrice, selections);
     window.scrollTo({ top: 0, behavior: "smooth" });
-    
+    document.getElementById('calculationResult').value = estimatedPrice;
   });
   
   document.getElementById("Confirm-btn").addEventListener("click", function () {
     const selections = gatherUserSelections();
     const estimatedPrice = calculateEstimate(selections);
-    const resultUrl = `result.html?projectType=${selections.projectType}&city=${selections.city}&propertyType=${selections.propertyType}&styling=${selections.styling}&ceilingHeight=${selections.ceilingHeight}&plan=${selections.plan}&carpetArea=${selections.carpetArea}&selectedAddOns=${selections.selectedAddOns.join(",")}&estimatedPrice=${estimatedPrice}`;
+    const resultUrl = `result.html?projectType=${selections.projectType}&city=${selections.city}&propertyType=${selections.propertyType}&styling=${selections.styling}&ceilingHeight=${selections.ceilingHeight}&plan=${selections.plan}&carpetArea=${selections.carpetArea}&selectedAddOns=${selections.selectedAddOns.join(",")}&estimatedPrice=${estimatedPrice}&clientName=${selections.clientName}&projectID=${selections.projectID}`;
+
   
     // Redirect to the result.html page
     window.open(resultUrl, "_blank");
@@ -280,4 +286,67 @@ const basePrices = {
     console.log("Estimated Price:", estimatedPrice); // Check if estimated price is calculated correctly
     updateResultOutput(estimatedPrice, selections);
   });
-  
+  // Get the hidden input field for selected city
+const selectedCityInput = document.getElementById('selected-city');
+
+// Add a click event listener to each city button
+cityButtons.forEach(button => {
+  button.addEventListener('click', function() {
+    // Get the data-value attribute from the clicked button
+    const selectedCity = this.getAttribute('data-value');
+    
+    // Set the value of the hidden input field to the selected city
+    selectedCityInput.value = selectedCity;
+    
+    // Optionally, you can display a message to indicate the selected city
+    
+  });
+});
+
+// Hidden input fields for selected values
+const selectedProjectTypeInput = document.getElementById('selected-project-type');
+const selectedPropertyTypeInput = document.getElementById('selected-property-type');
+const selectedStylingInput = document.getElementById('selected-styling');
+const selectedCeilingHeightInput = document.getElementById('selected-ceiling-height');
+const selectedPlanTypeInput = document.getElementById('selected-plan-type');
+
+// Add click event listeners for project type buttons
+projectTypeButtons.forEach(button => {
+  button.addEventListener('click', function() {
+    const selectedProjectType = this.getAttribute('data-value');
+    selectedProjectTypeInput.value = selectedProjectType;
+  });
+});
+
+// Add click event listeners for property type buttons
+propertyTypeButtons.forEach(button => {
+  button.addEventListener('click', function() {
+    const selectedPropertyType = this.getAttribute('data-value');
+    selectedPropertyTypeInput.value = selectedPropertyType;
+  });
+});
+
+// Add click event listeners for styling buttons
+stylingButtons.forEach(button => {
+  button.addEventListener('click', function() {
+    const selectedStyling = this.getAttribute('data-value');
+    selectedStylingInput.value = selectedStyling;
+  });
+});
+
+// Add click event listeners for ceiling height buttons
+ceilingHeightButtons.forEach(button => {
+  button.addEventListener('click', function() {
+    const selectedCeilingHeight = this.getAttribute('data-value');
+    selectedCeilingHeightInput.value = selectedCeilingHeight;
+  });
+});
+
+// Add click event listeners for plan type buttons
+planButtons.forEach(button => {
+  button.addEventListener('click', function() {
+    const selectedPlanType = this.getAttribute('data-value');
+    selectedPlanTypeInput.value = selectedPlanType;
+  });
+});
+

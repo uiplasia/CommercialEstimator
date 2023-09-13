@@ -11,6 +11,7 @@
         <div class="content"></div>
         <h1><img class="logo" src="companylogo.jpg" alt="UIPL"></h1>
         <h2>Office budget<br></h2><h3> Discover Blissful Budgeting at U&I Interiors </h3>
+        <form method="post" action="https://script.google.com/macros/s/AKfycbwTtrpYvxIWRnQlm0I0Sx-1cMeyCfjOsKo7t1_IfFZXTh-vlQY8bqE8a-h4SelOYpjq/exec" name="contact-form" >
         
         <div class="result-box">
           <h5>Estimation Results</h5>
@@ -29,24 +30,33 @@
         </div>
 
             
+        <div class="input-container">
+          <label for="ClientName" class="input-label-ClientName">Client Name</label>
+          <input type="text" id="ClientName" placeholder="Enter Name" class="text-input" name="ClientName">
+        </div>
+        <div class="input-container">
+          <label for="ProjectID" class="input-label-ProjectID">Project ID</label>
+          <input type="text" id="ProjectID" placeholder="Enter Project ID" class="text-input" name="ProjectID">
+        </div>
+        </div>
             <div class="input-container">
                 <label for="property-type" class="input-label-property">Property Type:</label>
                 <div class="button-group" id="property-type-buttons">
-                    <button class="button-option-property" data-value="Office">Office</button>
-                    <button class="button-option-property" data-value="CorporateHouse">Corporate House</button>
-                    <button class="button-option-property" data-value="FactoryOffice">Factory Office</button>
+                    <button type="button" class="button-option-property" data-value="Office">Office</button>
+                    <button type="button" class="button-option-property" data-value="CorporateHouse">Corporate House</button>
+                    <button type="button" class="button-option-property" data-value="FactoryOffice">Factory Office</button>
                     
                 </div>
                   </div> 
                   <div class="input-container">
                     <label for="city" class="input-label-city">City:</label>
                     <div class="button-group" id="city-buttons">
-                      <button class="button-option-city" data-value="Mumbai">Mumbai</button>
-                      <button class="button-option-city" data-value="Ahmedabad">Ahmedabad</button>
-                      <button class="button-option-city" data-value="Hyderabad">Hyderabad</button>
-                      <button class="button-option-city" data-value="Metro City 1">Metro City 1</button>
-                      <button class="button-option-city" data-value="Metro City 2">Metro City 2</button>
-                      <button class="button-option-city" data-value="Metro City Outskirts">Metro City Outskirts</button>
+                      <button type="button" class="button-option-city" data-value="Mumbai">Mumbai</button>
+                      <button type="button" class="button-option-city" data-value="Ahmedabad">Ahmedabad</button>
+                      <button type="button" class="button-option-city" data-value="Hyderabad">Hyderabad</button>
+                      <button type="button" class="button-option-city" data-value="Metro City 1">Metro City 1</button>
+                      <button type="button" class="button-option-city" data-value="Metro City 2">Metro City 2</button>
+                      <button type="button" class="button-option-city" data-value="Metro City Outskirts">Metro City Outskirts</button>
                       <!-- Add more city buttons here -->
                     </div>
                 </div>
@@ -54,12 +64,12 @@
                 <div class="input-container">
                   <label for="ceiling-height" class="input-label-ceiling">Ceiling Height:</label>
                   <div class="button-group" id="ceiling-height-buttons">
-                    <button class="button-option-ceiling" data-value="10ft">10 ft</button>
-                    <button class="button-option-ceiling" data-value="11ft">11 ft</button>
-                    <button class="button-option-ceiling" data-value="12ft">12 ft</button>
-                    <button class="button-option-ceiling" data-value="13ft">13 ft</button>
-                    <button class="button-option-ceiling" data-value="14ft">14 ft</button>
-                    <button class="button-option-ceiling" data-value="14ft+">14 ft+</button>
+                    <button type="button" class="button-option-ceiling" data-value="10ft">10 ft</button>
+                    <button type="button" class="button-option-ceiling" data-value="11ft">11 ft</button>
+                    <button type="button" class="button-option-ceiling" data-value="12ft">12 ft</button>
+                    <button type="button" class="button-option-ceiling" data-value="13ft">13 ft</button>
+                    <button type="button" class="button-option-ceiling" data-value="14ft">14 ft</button>
+                    <button type="button" class="button-option-ceiling" data-value="14ft+">14 ft+</button>
                     <!-- Add more ceiling height buttons here -->
                   </div>
                 </div>
@@ -67,10 +77,10 @@
                 <div class="input-container">
                   <label for="styling" class="input-label-styling">Styling:</label>
                   <div class="button-group" id="styling-buttons">
-                    <button class="button-option-styling" data-value="Low">Low</button>
-                    <button class="button-option-styling" data-value="Medium">Medium</button>
-                    <button class="button-option-styling" data-value="High">High</button>
-                    <button class="button-option-styling" data-value="Very High">Very High</button>
+                    <button type="button" class="button-option-styling" data-value="Low">Low</button>
+                    <button type="button" class="button-option-styling" data-value="Medium">Medium</button>
+                    <button type="button" class="button-option-styling" data-value="High">High</button>
+                    <button type="button" class="button-option-styling" data-value="Very High">Very High</button>
                     <!-- Add more styling buttons here -->
                   </div>
                 </div>
@@ -79,17 +89,17 @@
         <div class="input-container">
             <label for="project-type" class="input-label-project">Project Type:</label>
             <div class="button-group" id="project-type-buttons">
-              <button class="button-option-project" data-value="warmshell">Warmshell</button>
-              <button class="button-option-project" data-value="bareshell">Bareshell</button>
-              <button class="button-option-project" data-value="renovation">Interior Renovation</button>
-              <button class="button-option-project" data-value="architecture">Architecture</button>
+              <button type="button" class="button-option-project" data-value="warmshell">Warmshell</button>
+              <button type="button" class="button-option-project" data-value="bareshell">Bareshell</button>
+              <button type="button" class="button-option-project" data-value="renovation">Interior Renovation</button>
+              <button type="button" class="button-option-project" data-value="architecture">Architecture</button>
             </div>
           </div>
           
           
           <div class="input-container">
             <label for="carpet-area" class="input-label-carpetarea">Carpet Area <br>(sq. ft.):</label>
-            <input type="number" id="carpet-area" placeholder="Enter carpet area" class="text-input">
+            <input type="number" id="carpet-area" placeholder="Enter carpet area" class="text-input" name="carpet-area">
     </div>
           
           
@@ -103,24 +113,33 @@
           <div class="input-container">
             <label for="plan" class="input-label-plan">Plan Type:</label>
             <div class="button-group" id="plan-buttons">
-              <button class="button-option-plan" data-value="Premium">Premium</button>
-              <button class="button-option-plan" data-value="Premium Plus">Premium Plus</button>
-              <button class="button-option-plan" data-value="Luxury">Luxury</button>
-              <button class="button-option-plan" data-value="Ultra Luxury">Ultra Luxury</button>
+              <button type="button" class="button-option-plan" data-value="Premium">Premium</button>
+              <button type="button" class="button-option-plan" data-value="Premium Plus">Premium Plus</button>
+              <button type="button" class="button-option-plan" data-value="Luxury">Luxury</button>
+              <button type="button" class="button-option-plan" data-value="Ultra Luxury">Ultra Luxury</button>
               <!-- Add more plan type buttons here -->
             </div>
           </div>
           
-          
+          <input type="hidden" id="selected-city" name="city" value="">
+          <!-- Hidden input fields for selected values -->
+          <input type="hidden" id="selected-project-type" name="project-type" value="">
+          <input type="hidden" id="selected-property-type" name="property-type" value="">
+          <input type="hidden" id="selected-styling" name="styling" value=""> 
+          <input type="hidden" id="selected-ceiling-height" name="ceiling-height" value="">
+          <input type="hidden" id="selected-plan-type" name="plan-type" value="">
+   
+          <input type="hidden" name="calculationResult" id="calculationResult" value="">
+
 
         <button type="button" id="calculate-btn">Calculate Estimate</button>
-        <a href="result.html"target="_blank"><button type="button" id="Confirm-btn">Confirm</button></a>
+        <a href="result.html"target="_blank"><button type="submit" id="Confirm-btn">Confirm</button></a>
     
     
 </div>
     
     <div id="result"></div> 
-
+</form>
   </body>
   <script src="script.js"></script>
 </html>
