@@ -288,13 +288,29 @@ const basePrices = {
     selectedSigningAmount = 0.4 * estimatedPrice;
     selectedPhaseOneComplete = 0.4 * estimatedPrice;
     selectedTwoDaysBeforeComplete = 0.2 * estimatedPrice;
-    console.log("signing amount:",selectedSigningAmount);
-    console.log("signing amount:",selectedPhaseOneComplete);
-    console.log("signing amount:",selectedTwoDaysBeforeComplete);
+    selectedcalculationTaxAmount = 0.18 * estimatedPrice;
+    selectedtotalCalculationWithTax = estimatedPrice + selectedcalculationTaxAmount; 
+    selectedsigningTaxAmount= 0.18 * selectedSigningAmount;
+    selectedtotalSigningWithTax = selectedSigningAmount + selectedsigningTaxAmount;
+    selectedphaseOneTaxAmount = 0.18 * selectedPhaseOneComplete;
+    selectedphaseOneWithTax = selectedPhaseOneComplete + selectedphaseOneTaxAmount;
+    selectedtwoDaysBeforeCompleteTaxAmount = 0.18 * selectedTwoDaysBeforeComplete;
+    selectedtwoDaysBeforeWithTax = selectedTwoDaysBeforeComplete + selectedtwoDaysBeforeCompleteTaxAmount;
+  
     document.getElementById('signingAmount').value = selectedSigningAmount;
     document.getElementById('phaseOneComplete').value = selectedPhaseOneComplete;
     document.getElementById('twoDaysBeforeComplete').value = selectedTwoDaysBeforeComplete;
-  
+    document.getElementById('calculationTaxAmount').value = selectedcalculationTaxAmount;
+    document.getElementById('totalCalculationWithTax').value = selectedtotalCalculationWithTax;
+    document.getElementById('signingTaxAmount').value = selectedsigningTaxAmount;
+    document.getElementById('totalSigningWithTax').value = selectedtotalSigningWithTax;
+    document.getElementById('phaseOneTaxAmount').value = selectedphaseOneTaxAmount;
+    document.getElementById('phaseOneWithTax').value = selectedphaseOneWithTax;
+    document.getElementById('twoDaysBeforeCompleteTaxAmount').value = selectedtwoDaysBeforeCompleteTaxAmount;
+    document.getElementById('twoDaysBeforeWithTax').value = selectedtwoDaysBeforeWithTax;
+    console.log('tax amount:',selectedtotalCalculationWithTax);
+    console.log('tax amount:',selectedtotalSigningWithTax);
+    
   });
   // Get the hidden input field for selected city
 const selectedCityInput = document.getElementById('selected-city');
