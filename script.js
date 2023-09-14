@@ -285,6 +285,16 @@ const basePrices = {
     const estimatedPrice = calculateEstimate(selections);
     console.log("Estimated Price:", estimatedPrice); // Check if estimated price is calculated correctly
     updateResultOutput(estimatedPrice, selections);
+    selectedSigningAmount = 0.4 * estimatedPrice;
+    selectedPhaseOneComplete = 0.4 * estimatedPrice;
+    selectedTwoDaysBeforeComplete = 0.2 * estimatedPrice;
+    console.log("signing amount:",selectedSigningAmount);
+    console.log("signing amount:",selectedPhaseOneComplete);
+    console.log("signing amount:",selectedTwoDaysBeforeComplete);
+    document.getElementById('signingAmount').value = selectedSigningAmount;
+    document.getElementById('phaseOneComplete').value = selectedPhaseOneComplete;
+    document.getElementById('twoDaysBeforeComplete').value = selectedTwoDaysBeforeComplete;
+  
   });
   // Get the hidden input field for selected city
 const selectedCityInput = document.getElementById('selected-city');
