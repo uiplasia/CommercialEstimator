@@ -142,9 +142,7 @@ td#Scope{
         <tr>
             <td><strong>City</strong></td>
             <td id="CityCell"></td>
-        </tr>
-        <td><strong>Styling</strong></td>
-        <td id="StylingCell"></td>
+       
     </tr>
     <td><strong>Plan Type</strong></td>
     <td id="PlanTypeCell"></td>
@@ -157,6 +155,8 @@ td#Scope{
 </tr>
 <td><strong>Estimated Price</strong></td>
 <td id="EstimatedPriceCell"></td>
+</tr>
+<td colspan="2"><strong>GST extra as applicable</strong></td>
 
 <table>
     <thead>
@@ -193,7 +193,7 @@ td#Scope{
         const projectType = urlParams.get("projectType");
         const city = urlParams.get("city");
         const propertyType = urlParams.get("propertyType");
-        const styling = urlParams.get("styling");
+        //const styling = urlParams.get("styling");
         const ceilingHeight = urlParams.get("ceilingHeight");
         const plan = urlParams.get("plan");
         const carpetArea = parseFloat(urlParams.get("carpetArea"));
@@ -226,10 +226,10 @@ td#Scope{
     cityCell.textContent += city.charAt(0).toUpperCase() + city.slice(1);
 
      
-    const stylingCell = document.getElementById("StylingCell");
+    // const stylingCell = document.getElementById("StylingCell");
     
-    // Set the text content of the house size cell to the value of selectedHouseSizeParam
-    stylingCell.textContent += styling.charAt(0).toUpperCase() + styling.slice(1);
+    // // Set the text content of the house size cell to the value of selectedHouseSizeParam
+    // stylingCell.textContent += styling.charAt(0).toUpperCase() + styling.slice(1);
      
     const planTypeCell = document.getElementById("PlanTypeCell");
     
@@ -305,7 +305,10 @@ let scopeDiscription ="";
             <li>Ceiling Treatment</li>
             <li>Customized Furniture</li>
             <li>Decorative Lights</li>
-            <li>Doors Renovation</li>
+            <li>Partition and Doors</li>
+            <li>Chairs</li>
+            <li>Tables</li>
+            <li>LAN Cables</li>
             <li>Electrical</li>
             <li>Fixed Lights</li>
             <li>Fans</li>
@@ -321,7 +324,10 @@ let scopeDiscription ="";
             <li>Ceiling Treatment</li>
             <li>Customized Furniture</li>
             <li>Decorative Lights</li>
-            <li>Doors Renovation</li>
+            <li>Partition and Doors</li>
+            <li>Chairs</li>
+            <li>Tables</li>
+            <li>LAN Cables</li>
             <li>Electrical</li>
             <li>Fixed Lights</li>
             <li>Fans</li>
@@ -344,7 +350,10 @@ let scopeDiscription ="";
             <li>Ceiling Treatment</li>
             <li>Customized Furniture</li>
             <li>Decorative Lights</li>
-            <li>Doors Renovation</li>
+            <li>Partition and Doors</li>
+            <li>Chairs</li>
+            <li>Tables</li>
+            <li>LAN Cables</li>
             <li>Electrical</li>
             <li>Fixed Lights</li>
             <li>Fans</li>
@@ -373,7 +382,10 @@ let scopeDiscription ="";
             <li>Ceiling Treatment</li>
             <li>Customized Furniture</li>
             <li>Decorative Lights</li>
-            <li>Doors Renovation</li>
+            <li>Partition and Doors</li>
+            <li>Chairs</li>
+            <li>Tables</li>
+            <li>LAN Cables</li>
             <li>Electrical</li>
             <li>Fixed Lights</li>
             <li>Fans</li>
